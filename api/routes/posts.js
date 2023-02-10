@@ -680,7 +680,7 @@ router.post('/add_post', cpUpload, verify, async (req, res, next) => {
       }
 
       // FILE_SIZE_IS_TOO_BIG
-      if (item_image.buffer.byteLength > MAX_SIZE_IMAGE) {
+      if (item_image.size > MAX_SIZE_IMAGE) {
         console.log('FILE_SIZE_IS_TOO_BIG');
         return setAndSendResponse(res, responseError.FILE_SIZE_IS_TOO_BIG);
       }
@@ -716,7 +716,7 @@ router.post('/add_post', cpUpload, verify, async (req, res, next) => {
         );
       }
 
-      if (item_video.buffer.byteLength > MAX_SIZE_VIDEO) {
+      if (item_video.size > MAX_SIZE_VIDEO) {
         console.log('Max video file size');
         return setAndSendResponse(res, responseError.FILE_SIZE_IS_TOO_BIG);
       }
@@ -1020,7 +1020,7 @@ router.post('/edit_post', cpUpload, verify, async (req, res) => {
         );
       }
 
-      if (item_video.buffer.byteLength > MAX_SIZE_VIDEO) {
+      if (item_video.size > MAX_SIZE_VIDEO) {
         console.log('Max video file size');
         return setAndSendResponse(res, responseError.FILE_SIZE_IS_TOO_BIG);
       }
@@ -1064,7 +1064,7 @@ router.post('/edit_post', cpUpload, verify, async (req, res) => {
         );
       }
 
-      if (item_image.buffer.byteLength > MAX_SIZE_IMAGE) {
+      if (item_image.size > MAX_SIZE_IMAGE) {
         console.log('Max image file size');
         return setAndSendResponse(res, responseError.FILE_SIZE_IS_TOO_BIG);
       }
