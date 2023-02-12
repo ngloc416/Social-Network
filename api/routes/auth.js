@@ -363,6 +363,7 @@ router.post('/login', async (req, res) => {
               token: token,
               avatar: loginUser.avatar.url ? loginUser.avatar.url : null,
               active: null,
+              phone: loginUser.phoneNumber ? loginUser.phoneNumber : null,
             };
             return callRes(res, responseError.OK, data);
           }
